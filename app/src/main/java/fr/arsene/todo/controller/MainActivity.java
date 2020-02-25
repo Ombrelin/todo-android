@@ -12,12 +12,12 @@ import androidx.appcompat.widget.Toolbar;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
-import java.util.LinkedList;
 import java.util.List;
 
 import fr.arsene.todo.R;
+import fr.arsene.todo.modele.DAO;
 import fr.arsene.todo.modele.Todo;
-import fr.arsene.todo.modele.TodoService;
+import fr.arsene.todo.modele.TodoDAO;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -40,10 +40,8 @@ public class MainActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
 
         // Init test data
-        List<Todo> todos = TodoService.getINSTANCE().getTodos();
-        todos.add(new Todo("Test 1","This is a test"));
-        todos.add(new Todo("Test 2","This is a test"));
-        todos.add(new Todo("Test 3","This is a test"));
+        DAO<Todo> todoDAO = new TodoDAO(getApplicationContext());
+        List<Todo> todos = todoDAO.getAll();
 
         loadData(todos);
     }
@@ -56,7 +54,8 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onResume() {
         super.onResume();
-        this.loadData(TodoService.getINSTANCE().getTodos());
+        DAO<Todo> todoDAO = new TodoDAO(getApplicationContext());
+        this.loadData(todoDAO.getAll());
     }
 
     public void handleClickAddButton(View v){
