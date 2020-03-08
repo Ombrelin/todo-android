@@ -2,16 +2,15 @@ package fr.arsene.todo.modele;
 
 public class Todo {
 
-    private int id;
+    private String id;
     private String title;
     private String description;
 
-    public Todo(int id, String title, String description) {
+    public Todo(String id, String title, String description) {
         this.id = id;
         this.title = title;
         this.description = description;
     }
-
 
     public Todo(String title, String description) {
         this.id = id;
@@ -19,11 +18,11 @@ public class Todo {
         this.description = description;
     }
 
-    public int getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(String id) {
         this.id = id;
     }
 
