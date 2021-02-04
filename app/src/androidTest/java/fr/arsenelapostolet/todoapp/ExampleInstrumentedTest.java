@@ -1,4 +1,4 @@
-package fr.arsene.todo;
+package fr.arsenelapostolet.todoapp;
 
 import android.content.Context;
 
@@ -21,7 +21,6 @@ public class ExampleInstrumentedTest {
     public void useAppContext() {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getInstrumentation().getTargetContext();
-
-        assertEquals("fr.arsene.todo", appContext.getPackageName());
+        assertEquals("fr.arsenelapostolet.todoapp", appContext.getPackageName());
     }
 }

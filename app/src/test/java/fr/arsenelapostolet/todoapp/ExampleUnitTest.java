@@ -1,4 +1,4 @@
-package fr.arsene.todo;
+package fr.arsenelapostolet.todoapp;
 
 import org.junit.Test;
 
