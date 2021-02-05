@@ -1,8 +1,10 @@
-package fr.arsenelapostolet.todoapp;
+package fr.arsenelapostolet.todoapp.view;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+
+import fr.arsenelapostolet.todoapp.R;
 
 public class MainActivity extends AppCompatActivity {
 
